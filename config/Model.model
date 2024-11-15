@@ -1,4 +1,60 @@
 <?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
-<ns3:modelConfig xsi:type="ns3:ModelConfig" folder="" pauseCalculations="false" entityCode="11" loadPath="newTest2" entityName="newTest2" version="8" name="newTest2" lastUpdated="2024-11-15T16:06:13.661+02:00" lastUpdatedBy="admin" id="admin:MODEL:newTest2" xmlns:ns6="http://www.modelshop.com/services/account/types" xmlns:ns5="http://www.modelshop.com/datacore/message/types" xmlns:ns8="http://www.modelshop.com/datacore/generator/types" xmlns:ns7="http://www.modelshop.com/datacore/repository/types" xmlns:ns2="http://www.modelshop.com/datacore/view/types" xmlns:ns4="http://www.modelshop.com/services/model/types" xmlns:ns3="http://www.modelshop.com/model/model/types" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <views allColumns="true" default="true" modelView="true" entityName="newTest2" name="newTest2" description="Default view for list newTest2" id="newTest2"/>
+<ns3:modelConfig xsi:type="ns3:ModelConfig" folder="" pauseCalculations="false" entityCode="11" loadPath="newTest2clone" entityName="newTest2clone" version="22" name="newTest2clone" lastUpdated="2024-11-15T16:19:11.247+02:00" lastUpdatedBy="admin" id="admin:MODEL:newTest2clone" xmlns:ns6="http://www.modelshop.com/services/account/types" xmlns:ns5="http://www.modelshop.com/datacore/message/types" xmlns:ns8="http://www.modelshop.com/datacore/generator/types" xmlns:ns7="http://www.modelshop.com/datacore/repository/types" xmlns:ns2="http://www.modelshop.com/datacore/view/types" xmlns:ns4="http://www.modelshop.com/services/model/types" xmlns:ns3="http://www.modelshop.com/model/model/types" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <datalists entityCode="2" entityName="Sheet2" version="22" name="Sheet2" created="2024-11-15T16:19:11.243+02:00" createdBy="admin" lastUpdated="2024-11-15T16:19:11.243+02:00" lastUpdatedBy="admin" id="Sheet2">
+        <dataFields type="text" fieldCode="100" rawType="java.lang.String" allowNull="true" name="Value" initialized="true" id="Value"/>
+        <dataFields type="text" fieldCode="101" rawType="java.lang.String" allowNull="true" name="Sector" initialized="true" id="Sector"/>
+        <dataFields type="text" fieldCode="102" readOnly="true" rawType="java.lang.String" name="sourceName" description="Source name" initialized="true" id="sourceName">
+            <defaultValue source="'Manual Entry'"/>
+        </dataFields>
+        <dataFields type="integer" fieldCode="103" readOnly="true" rawType="java.lang.Long" name="lineNumber" description="Source line number" initialized="true" id="lineNumber">
+            <defaultValue source="id"/>
+        </dataFields>
+    </datalists>
+    <datalists entityCode="1" entityName="Strategy" version="22" name="Strategy" created="2024-11-15T16:19:11.246+02:00" createdBy="admin" lastUpdated="2024-11-15T16:19:11.246+02:00" lastUpdatedBy="admin" id="Strategy">
+        <dataFields type="text" fieldCode="100" rawType="java.lang.String" allowNull="true" name="Name" initialized="true" id="Name"/>
+        <dataFields type="text" fieldCode="101" rawType="java.lang.String" allowNull="true" name="Sector" initialized="true" id="Sector"/>
+        <dataFields type="text" fieldCode="102" readOnly="true" rawType="java.lang.String" name="sourceName" description="Source name" initialized="true" id="sourceName">
+            <defaultValue source="'Manual Entry'"/>
+        </dataFields>
+        <dataFields type="integer" fieldCode="103" readOnly="true" rawType="java.lang.Long" name="lineNumber" description="Source line number" initialized="true" id="lineNumber">
+            <defaultValue source="id"/>
+        </dataFields>
+    </datalists>
+    <views allColumns="true" default="true" modelView="true" entityName="newTest2clone" name="newTest2clone" description="Default view for list newTest2" id="newTest2clone"/>
+    <views allColumns="true" default="true" entityName="Sheet2" name="Sheet2" description="Default view for list Sheet2" id="Sheet2"/>
+    <views allColumns="true" default="true" entityName="Strategy" name="Strategy" description="Default view for list Strategy" id="Strategy"/>
+    <connectors layoutDetected="true" entityName="Sheet2" version="22" name="Sheet2" created="2024-11-15T16:19:11.245+02:00" createdBy="admin" lastUpdated="2024-11-15T16:19:11.245+02:00" lastUpdatedBy="admin" id="Sheet2">
+        <connectorFields columnIndex="0" ignore="false" mapField="Value" type="text" rawType="String" allowNull="true" name="Value" id="Value"/>
+        <connectorFields columnIndex="1" ignore="false" mapField="Sector" type="text" rawType="String" allowNull="true" name="Sector" id="Sector"/>
+        <connectorFields mapField="sourceName" type="text" readOnly="true" rawType="String" name="sourceName" description="Source name" id="sourceName"/>
+        <connectorFields mapField="lineNumber" type="integer" readOnly="true" rawType="Long" name="lineNumber" description="Source line number" id="lineNumber"/>
+        <dataSource connectorUrl="test.xlsx">
+            <fileSource>
+                <dataSourceRefs>test.xlsx</dataSourceRefs>
+            </fileSource>
+            <loadFilter/>
+        </dataSource>
+        <mediaConfig connectorMediaType="excel">
+            <excelMedia>
+                <component componentType="excelworksheet" componentId="rId2" componentName="Sheet2" displayName="Sheet2"/>
+            </excelMedia>
+        </mediaConfig>
+    </connectors>
+    <connectors layoutDetected="true" entityName="Strategy" version="22" name="Strategy" created="2024-11-15T16:19:11.247+02:00" createdBy="admin" lastUpdated="2024-11-15T16:19:11.247+02:00" lastUpdatedBy="admin" id="Strategy">
+        <connectorFields columnIndex="0" ignore="false" mapField="Name" type="text" rawType="String" allowNull="true" name="Name" id="Name"/>
+        <connectorFields columnIndex="1" ignore="false" mapField="Sector" type="text" rawType="String" allowNull="true" name="Sector" id="Sector"/>
+        <connectorFields mapField="sourceName" type="text" readOnly="true" rawType="String" name="sourceName" description="Source name" id="sourceName"/>
+        <connectorFields mapField="lineNumber" type="integer" readOnly="true" rawType="Long" name="lineNumber" description="Source line number" id="lineNumber"/>
+        <dataSource connectorUrl="test.xlsx">
+            <fileSource>
+                <dataSourceRefs>test.xlsx</dataSourceRefs>
+            </fileSource>
+            <loadFilter/>
+        </dataSource>
+        <mediaConfig connectorMediaType="excel">
+            <excelMedia>
+                <component componentType="excelworksheet" componentId="rId3" componentName="Strategy" displayName="Strategy"/>
+            </excelMedia>
+        </mediaConfig>
+    </connectors>
 </ns3:modelConfig>
